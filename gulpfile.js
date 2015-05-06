@@ -4,9 +4,9 @@ var gutil = require('gulp-util');
 var styl = require('gulp-stylus');
 var autoprefixer   = require('autoprefixer-stylus');
 var webpack = require("webpack");
-// var runSequence = require('run-sequence');
+var runSequence = require('run-sequence');
 // var bower = require('gulp-bower');
-// var del = require('del');
+var del = require('del');
 
 gulp.task('clean', function () {
   return del(['build/*'] , function () {
@@ -29,7 +29,7 @@ gulp.task('images', function () {
 
 gulp.task('sass', function () {
   return  gulp.src(['client/css/**/*.{styl}'])
-              .pipe(sass({ includePaths : [/*'bower_components', */'node_modules'], errLogToConsole: true}))
+              .pipe(styl({ includePaths : [/*'bower_components', */'node_modules'], errLogToConsole: true}))
               .pipe(autoprefixer({
                 browsers: ['last 2 versions', 'ie 10']
               }))

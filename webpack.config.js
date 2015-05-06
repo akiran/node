@@ -8,12 +8,12 @@ module.exports = {
 	'app.js': './client/js/app.jsx'
     },
     output: {
-	path: path.join(_dirname, 'build', 'js'),
+	path: path.join(__dirname, 'build', 'js'),
 	filename: '[name]',
     },
     module: {
 	loaders: [
-	    {test: /\.jsx$/, loaders: ['bable']},
+	    {test: /\.jsx$/, loaders: ['babel']},
 	],
     },
     resolve : {
